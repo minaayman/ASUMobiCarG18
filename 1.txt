@@ -1,0 +1,29 @@
+#define LED1 4
+  #define LED2 5
+  #define LED3 6
+  #define LED4 7
+
+
+  void setup()
+{
+pinMode(LED1,OUTPUT);
+pinMode(LED2,OUTPUT);
+pinMode(LED3,OUTPUT);
+pinMode(LED4,OUTPUT);
+}
+
+	void loop()
+    {
+      digitalWrite(4,HIGH);
+      delay(1000);
+      digitalWrite(4,LOW);
+     digitalWrite(5,HIGH);
+      delay(1000);
+      digitalWrite(5,LOW);
+      digitalWrite(6,HIGH);
+      delay(1000);
+      digitalWrite(6,LOW);
+      digitalWrite(7,HIGH);
+      delay(1000);
+      digitalWrite(7,LOW);
+    }
