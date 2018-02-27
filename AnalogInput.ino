@@ -1,10 +1,10 @@
-int analogpin0 = A0;    // select the input pin for the potentiometer
-int analogpin1 = A1;    // select the input pin for the potentiometer
-int analogpin2 = A2;    // select the input pin for the potentiometer
+int analogpin0 = A0;   
+int analogpin1 = A1;   
+int analogpin2 = A2;   
 
-int ledPin0 = 13;      // select the pin for the LED
-int ledPin1 = 12;      // select the pin for the LED
-int ledPin2 = 11;      // select the pin for the LED
+int ledPin0 = 13;     
+int ledPin1 = 12;      
+int ledPin2 = 11;      
 
 int sensorValue0=0;
 int sensorValue1=0;
