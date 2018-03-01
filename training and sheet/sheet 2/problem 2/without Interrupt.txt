@@ -1,0 +1,44 @@
+int btn1 = 2;
+int btn2 = 3;
+int led = 13;
+int x = 1;
+
+void setup() {
+  pinMode(btn1, INPUT);
+  pinMode(btn2, INPUT);
+  pinMode(led, OUTPUT);
+}
+void loop() {
+
+
+  if (digitalRead(btn1) == HIGH && x < 10) {
+    x++;
+  }
+  else if (digitalRead(btn2) == HIGH && x > 1) {
+    x--;
+  }
+  digitalWrite(led, HIGH);
+   if (digitalRead(btn1) == HIGH && x < 10) {
+    x++;
+  }
+  else if (digitalRead(btn2) == HIGH && x > 1) {
+    x--;
+  }
+  delay((x * 1000) / 2);
+  if (btn1 == HIGH && x < 10) {
+    x++;
+  }
+  else if (digitalRead(btn2) == HIGH && x > 1) {
+    x--;
+  }
+  digitalWrite(led, LOW);
+   if (digitalRead(btn1) == HIGH && x < 10) {
+    x++;
+  }
+  else if (digitalRead(btn2) == HIGH && x > 1) {
+    x--;
+  }
+  delay((x * 1000) / 2);
+
+
+}

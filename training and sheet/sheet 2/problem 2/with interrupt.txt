@@ -1,0 +1,31 @@
+
+int increase = 2;
+int decrease = 3;
+volatile int x = 1;
+void setup()
+{
+  pinMode(2,INPUT);
+  pinMode(3,INPUT);
+  pinMode(13, OUTPUT);
+  attachInterrupt(digitalPinToInterrupt(increase), Increase, CHANGE);
+  attachInterrupt(digitalPinToInterrupt(decrease), Decrease, CHANGE);
+}
+
+void loop()
+{
+  
+  
+  digitalWrite(13, HIGH);
+  delay(x/2*1000); 
+  digitalWrite(13, LOW);
+  delay(x/2*1000);
+}
+void Increase()
+{
+  if(x<10){x++;}
+}
+void Decrease()
+{
+  if(x>1){x--;};
+  
+}
