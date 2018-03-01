@@ -1,0 +1,19 @@
+int dip[]={2,3,4,5,6,7};
+int LED=11;
+volatile int num=0;
+
+void setup(){
+  for(int i=0;i<6;i++){
+  	pinMode(dip[i],INPUT);
+  }
+ pinMode(LED,OUTPUT);
+}
+void loop(){
+  for(int i=0;i<6;i++){
+  	num+=digitalRead(dip[i])*pow(2,i);
+  }
+  digitalWrite(LED,HIGH);
+  delay(num*4);
+  digitalWrite(LED,LOW);
+  delay(2000);
+}
