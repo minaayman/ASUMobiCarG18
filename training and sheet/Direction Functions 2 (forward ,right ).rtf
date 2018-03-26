@@ -1,0 +1,19 @@
+void forward ( )
+{
+digitalwrite(x,HIGH);
+digitalwrite(y,LOW);
+digitalwrite(z,HIGH);
+digitalwrite(w,LOW);
+analogewrite(3,255); //Pin 3 for motors (x,y)
+analogewrite(5,255); // Pin 5 formotors (w,z)
+}
+
+void right ( )
+{ 
+digitalwrite(x,HIGH);
+digitalwrite(y,LOW);
+digitalwrite(z,HIGH);
+digitalwrite(w,LOW);
+analogewrite(3,255);
+analogewrite(5,0);
+}
