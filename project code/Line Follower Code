@@ -1,0 +1,120 @@
+
+const int x = 7;
+const int y = 8;
+const int z = 4;
+const int w = 9;
+const int R = A1;
+const int L = A3;
+const int C = A2;
+int speed1 = 90;
+char state = 'p';
+void forward ()
+{
+digitalWrite(x,HIGH);
+digitalWrite(y,LOW);
+digitalWrite(z,HIGH);
+digitalWrite(w,LOW);
+analogWrite(3,speed1);
+analogWrite(5,speed1);
+
+}
+
+void right ()
+{
+digitalWrite(x,HIGH);
+digitalWrite(y,LOW);
+digitalWrite(z,HIGH);
+digitalWrite(w,LOW);
+analogWrite(3,speed1);
+analogWrite(5,0);
+}
+
+
+
+
+
+void left ()
+{
+digitalWrite(x,HIGH);
+digitalWrite(y,LOW);
+digitalWrite(z,HIGH);
+digitalWrite(w,LOW);
+analogWrite(3,0);
+analogWrite(5,speed1);
+}
+void backward ()
+{
+digitalWrite(x,LOW);
+digitalWrite(y,HIGH);
+digitalWrite(z,LOW);
+digitalWrite(w,HIGH);
+analogWrite(3,speed1);
+analogWrite(5,speed1);
+}
+void stop1()
+{
+  digitalWrite(x,LOW);
+  digitalWrite(y,LOW);
+  digitalWrite(z,LOW);
+  digitalWrite(w,LOW);
+  analogWrite(3,0);
+  analogWrite(5,0);
+}
+/*void rightsharp()
+{
+digitalWrite(x,HIGH);
+digitalWrite(y,LOW);
+digitalWrite(z,LOW);
+digitalWrite(w,HIGH);
+ analogWrite(3,speed1);
+  analogWrite(5,speed1);
+}*/
+
+
+
+
+void setup() {
+  // put your setup code here, to run once:
+pinMode(x,OUTPUT);
+pinMode(y,OUTPUT);
+pinMode(w,OUTPUT);
+pinMode(z,OUTPUT);
+pinMode(R,INPUT);
+pinMode(L,INPUT);
+pinMode(C,INPUT);
+
+
+}
+
+void loop() 
+{
+  
+ if(digitalRead(C) == LOW && digitalRead(L) == HIGH && digitalRead(R) ==HIGH){forward();state = 'f';}
+
+ if((digitalRead(R) == LOW && digitalRead(L)==HIGH && digitalRead(C)==HIGH)||(digitalRead(R)==LOW &&digitalRead(L)==HIGH&&digitalRead(C)==LOW)) {right(); state = 'r' ;}
+ if((digitalRead(L) == LOW && digitalRead(R)==HIGH && digitalRead(C)==HIGH)||(digitalRead(R)==HIGH &&digitalRead(L)==LOW&&digitalRead(C)==LOW)) {left(); state = 'l' ;}
+
+   if((digitalRead(L) == HIGH && digitalRead(R)==HIGH && digitalRead(C)==HIGH)||(digitalRead(L) == LOW && digitalRead(R)==LOW && digitalRead(C)==LOW))
+  {
+  if(state == 'f')forward();
+  else if(state == 'l')left();
+  else if(state == 'r')right();   
+  else stop1();
+  }
+
+
+      
+
+         
+        
+     }
+     
+ 
+  
+
+
+
+
+  
+
+
