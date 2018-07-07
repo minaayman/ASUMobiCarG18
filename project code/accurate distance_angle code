@@ -1,0 +1,25 @@
+
+
+/* function to move by an accurate distance and angle */ 
+
+void distance(int distance,bool reset)
+{
+  int n_old = 0;
+  if(reset == 1)n_old = n_R;
+  while(1.025*(n_R-n_old) <distance){forward();}
+  stop1();
+  
+}
+void angle(int angle,bool test2)
+{
+  int n_old = 0;
+  if(test2 = 1)n_old = n_R;
+  float angle2 = angle*47/360;
+  while(1.025*(n_R-n_old)<angle2){left();}
+  stop1();
+}
+
+
+/*in our code we depend on rotary encoder that is attached directly to the car wheel and inside photo intruptor sensor , so when the wheel rotates ,
+the encoder rotates so the photo intruptor sensor changes from high to low and from low to high(the sensor in connected to the intrupts pin on arduino) .... we use this change to know the distance that the car moved 
+so we can control it. */
