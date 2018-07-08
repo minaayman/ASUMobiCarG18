@@ -1,0 +1,47 @@
+#define Left_sensor 1
+
+#define Right_sensor 3
+
+// kda kda el.define bta3 el.motor 3mleno 2bl kda//
+
+void setup()
+{
+pinMode(Left_sensor,INPUT);
+
+pinMode(Right_sensor,INPUT);
+}
+
+void loop()
+{
+if(digitalRead(Left_sensor)&&digitalRead(Right_sensor))
+{
+digitalWrite(lM1,HIGH);
+digitalWrite(RM1,HIGH);
+digitalWrite(lM2,LOW);
+digitalWrite(RM2,LOW);
+}
+
+if(!(digitalRead(Left_sensor))&&digitalRead(Right_sensor))
+{
+digitalWrite(lM1,LOW);
+digitalWrite(RM1,HIGH);
+digitalWrite(lM2,LOW);
+digitalWrite(RM2,LOW);
+}
+
+if(digitalRead(Left_sensor)&& !(digitalRead(Right_sensor)))
+{
+digitalWrite(lM1,HIGH);
+digitalWrite(RM1,LOW);
+digitalWrite(lM2,LOW);
+digitalWrite(RM2,LOW);
+}
+
+if(!(digitalRead(Left_sensor))&& !(digitalRead(Right_sensor)))
+{
+digitalWrite(lM1,LOW);
+digitalWrite(RM1,LOW);
+digitalWrite(lM2,LOW);
+digitalWrite(RM2,LOW);
+}
+}
